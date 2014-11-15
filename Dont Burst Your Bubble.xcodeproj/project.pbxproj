@@ -16,6 +16,13 @@
 		44893D681A0F933800BD2DF3 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 44893D671A0F933800BD2DF3 /* Images.xcassets */; };
 		44893D6B1A0F933800BD2DF3 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 44893D691A0F933800BD2DF3 /* LaunchScreen.xib */; };
 		44893D771A0F933800BD2DF3 /* Dont_Burst_Your_BubbleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 44893D761A0F933800BD2DF3 /* Dont_Burst_Your_BubbleTests.m */; };
+		44893D811A0F964800BD2DF3 /* Graphics.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 44893D801A0F964800BD2DF3 /* Graphics.atlas */; };
+		44893D871A0F98BE00BD2DF3 /* ADGFan.m in Sources */ = {isa = PBXBuildFile; fileRef = 44893D861A0F98BE00BD2DF3 /* ADGFan.m */; };
+		44893D8A1A101DA600BD2DF3 /* ADGBubble.m in Sources */ = {isa = PBXBuildFile; fileRef = 44893D891A101DA600BD2DF3 /* ADGBubble.m */; };
+		44893D8D1A16B73500BD2DF3 /* ADGConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 44893D8C1A16B73500BD2DF3 /* ADGConstants.m */; };
+		44893D941A16E87600BD2DF3 /* BurstBubble.sks in Resources */ = {isa = PBXBuildFile; fileRef = 44893D931A16E87600BD2DF3 /* BurstBubble.sks */; };
+		44893D971A16EAA600BD2DF3 /* FanParticles.sks in Resources */ = {isa = PBXBuildFile; fileRef = 44893D951A16EAA600BD2DF3 /* FanParticles.sks */; };
+		44893D991A16F0D100BD2DF3 /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = 44893D961A16EAA600BD2DF3 /* spark.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +52,17 @@
 		44893D701A0F933800BD2DF3 /* Dont Burst Your BubbleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Dont Burst Your BubbleTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		44893D751A0F933800BD2DF3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		44893D761A0F933800BD2DF3 /* Dont_Burst_Your_BubbleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Dont_Burst_Your_BubbleTests.m; sourceTree = "<group>"; };
+		44893D801A0F964800BD2DF3 /* Graphics.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Graphics.atlas; sourceTree = "<group>"; };
+		44893D851A0F98BE00BD2DF3 /* ADGFan.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADGFan.h; sourceTree = "<group>"; };
+		44893D861A0F98BE00BD2DF3 /* ADGFan.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADGFan.m; sourceTree = "<group>"; };
+		44893D881A101DA600BD2DF3 /* ADGBubble.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADGBubble.h; sourceTree = "<group>"; };
+		44893D891A101DA600BD2DF3 /* ADGBubble.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADGBubble.m; sourceTree = "<group>"; };
+		44893D8B1A16B73500BD2DF3 /* ADGConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADGConstants.h; sourceTree = "<group>"; };
+		44893D8C1A16B73500BD2DF3 /* ADGConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADGConstants.m; sourceTree = "<group>"; };
+		44893D901A16C05200BD2DF3 /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spark.png; sourceTree = "<group>"; };
+		44893D931A16E87600BD2DF3 /* BurstBubble.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = BurstBubble.sks; sourceTree = "<group>"; };
+		44893D951A16EAA600BD2DF3 /* FanParticles.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; name = FanParticles.sks; path = ../FanParticles.sks; sourceTree = "<group>"; };
+		44893D961A16EAA600BD2DF3 /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = spark.png; path = ../spark.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,13 +104,21 @@
 		44893D541A0F933800BD2DF3 /* Dont Burst Your Bubble */ = {
 			isa = PBXGroup;
 			children = (
+				44893D8E1A16BF4A00BD2DF3 /* Particle Effects */,
+				44893D801A0F964800BD2DF3 /* Graphics.atlas */,
 				44893D591A0F933800BD2DF3 /* AppDelegate.h */,
 				44893D5A1A0F933800BD2DF3 /* AppDelegate.m */,
-				44893D5C1A0F933800BD2DF3 /* GameScene.h */,
-				44893D5D1A0F933800BD2DF3 /* GameScene.m */,
-				44893D5F1A0F933800BD2DF3 /* GameScene.sks */,
 				44893D611A0F933800BD2DF3 /* GameViewController.h */,
 				44893D621A0F933800BD2DF3 /* GameViewController.m */,
+				44893D8B1A16B73500BD2DF3 /* ADGConstants.h */,
+				44893D8C1A16B73500BD2DF3 /* ADGConstants.m */,
+				44893D5C1A0F933800BD2DF3 /* GameScene.h */,
+				44893D5D1A0F933800BD2DF3 /* GameScene.m */,
+				44893D851A0F98BE00BD2DF3 /* ADGFan.h */,
+				44893D861A0F98BE00BD2DF3 /* ADGFan.m */,
+				44893D881A101DA600BD2DF3 /* ADGBubble.h */,
+				44893D891A101DA600BD2DF3 /* ADGBubble.m */,
+				44893D5F1A0F933800BD2DF3 /* GameScene.sks */,
 				44893D641A0F933800BD2DF3 /* Main.storyboard */,
 				44893D671A0F933800BD2DF3 /* Images.xcassets */,
 				44893D691A0F933800BD2DF3 /* LaunchScreen.xib */,
@@ -125,6 +151,17 @@
 				44893D751A0F933800BD2DF3 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		44893D8E1A16BF4A00BD2DF3 /* Particle Effects */ = {
+			isa = PBXGroup;
+			children = (
+				44893D951A16EAA600BD2DF3 /* FanParticles.sks */,
+				44893D961A16EAA600BD2DF3 /* spark.png */,
+				44893D931A16E87600BD2DF3 /* BurstBubble.sks */,
+				44893D901A16C05200BD2DF3 /* spark.png */,
+			);
+			name = "Particle Effects";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -207,7 +244,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				44893D991A16F0D100BD2DF3 /* spark.png in Resources */,
 				44893D6B1A0F933800BD2DF3 /* LaunchScreen.xib in Resources */,
+				44893D941A16E87600BD2DF3 /* BurstBubble.sks in Resources */,
+				44893D811A0F964800BD2DF3 /* Graphics.atlas in Resources */,
+				44893D971A16EAA600BD2DF3 /* FanParticles.sks in Resources */,
 				44893D681A0F933800BD2DF3 /* Images.xcassets in Resources */,
 				44893D601A0F933800BD2DF3 /* GameScene.sks in Resources */,
 				44893D661A0F933800BD2DF3 /* Main.storyboard in Resources */,
@@ -228,9 +269,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				44893D8A1A101DA600BD2DF3 /* ADGBubble.m in Sources */,
 				44893D631A0F933800BD2DF3 /* GameViewController.m in Sources */,
 				44893D5B1A0F933800BD2DF3 /* AppDelegate.m in Sources */,
 				44893D5E1A0F933800BD2DF3 /* GameScene.m in Sources */,
+				44893D8D1A16B73500BD2DF3 /* ADGConstants.m in Sources */,
+				44893D871A0F98BE00BD2DF3 /* ADGFan.m in Sources */,
 				44893D581A0F933800BD2DF3 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -422,6 +466,7 @@
 				44893D7C1A0F933800BD2DF3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		44893D7D1A0F933800BD2DF3 /* Build configuration list for PBXNativeTarget "Dont Burst Your BubbleTests" */ = {
 			isa = XCConfigurationList;
@@ -430,6 +475,7 @@
 				44893D7F1A0F933800BD2DF3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
