@@ -26,7 +26,7 @@
         self.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:self.size.width * 0.5];
         self.physicsBody.affectedByGravity = NO;
         self.physicsBody.categoryBitMask = kADGBubbleCategory;
-        self.physicsBody.contactTestBitMask = kADGFanCategory;
+        self.physicsBody.contactTestBitMask = kADGFanCategory | kADGSpikyBallCategory;
     }
     
     return self;
@@ -51,6 +51,11 @@
         if (contactBody.categoryBitMask == kADGFanCategory)
         {
             //Bubble has hit a fan
+            self.bubbleBurst = YES;
+            [self removeFromParent];
+        }
+        else if (contactBody.categoryBitMask == kADGSpikyBallCategory)
+        {
             self.bubbleBurst = YES;
             [self removeFromParent];
         }

@@ -23,6 +23,8 @@
 		44893D941A16E87600BD2DF3 /* BurstBubble.sks in Resources */ = {isa = PBXBuildFile; fileRef = 44893D931A16E87600BD2DF3 /* BurstBubble.sks */; };
 		44893D971A16EAA600BD2DF3 /* FanParticles.sks in Resources */ = {isa = PBXBuildFile; fileRef = 44893D951A16EAA600BD2DF3 /* FanParticles.sks */; };
 		44893D991A16F0D100BD2DF3 /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = 44893D961A16EAA600BD2DF3 /* spark.png */; };
+		44893D9C1A19063300BD2DF3 /* ADGSpikyBalls.m in Sources */ = {isa = PBXBuildFile; fileRef = 44893D9B1A19063300BD2DF3 /* ADGSpikyBalls.m */; };
+		44893D9F1A1BCFB800BD2DF3 /* ADGMoley.m in Sources */ = {isa = PBXBuildFile; fileRef = 44893D9E1A1BCFB800BD2DF3 /* ADGMoley.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +65,10 @@
 		44893D931A16E87600BD2DF3 /* BurstBubble.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = BurstBubble.sks; sourceTree = "<group>"; };
 		44893D951A16EAA600BD2DF3 /* FanParticles.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; name = FanParticles.sks; path = ../FanParticles.sks; sourceTree = "<group>"; };
 		44893D961A16EAA600BD2DF3 /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = spark.png; path = ../spark.png; sourceTree = "<group>"; };
+		44893D9A1A19063300BD2DF3 /* ADGSpikyBalls.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADGSpikyBalls.h; sourceTree = "<group>"; };
+		44893D9B1A19063300BD2DF3 /* ADGSpikyBalls.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADGSpikyBalls.m; sourceTree = "<group>"; };
+		44893D9D1A1BCFB800BD2DF3 /* ADGMoley.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADGMoley.h; sourceTree = "<group>"; };
+		44893D9E1A1BCFB800BD2DF3 /* ADGMoley.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADGMoley.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +124,10 @@
 				44893D861A0F98BE00BD2DF3 /* ADGFan.m */,
 				44893D881A101DA600BD2DF3 /* ADGBubble.h */,
 				44893D891A101DA600BD2DF3 /* ADGBubble.m */,
+				44893D9A1A19063300BD2DF3 /* ADGSpikyBalls.h */,
+				44893D9B1A19063300BD2DF3 /* ADGSpikyBalls.m */,
+				44893D9D1A1BCFB800BD2DF3 /* ADGMoley.h */,
+				44893D9E1A1BCFB800BD2DF3 /* ADGMoley.m */,
 				44893D5F1A0F933800BD2DF3 /* GameScene.sks */,
 				44893D641A0F933800BD2DF3 /* Main.storyboard */,
 				44893D671A0F933800BD2DF3 /* Images.xcassets */,
@@ -270,9 +280,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				44893D8A1A101DA600BD2DF3 /* ADGBubble.m in Sources */,
+				44893D9F1A1BCFB800BD2DF3 /* ADGMoley.m in Sources */,
 				44893D631A0F933800BD2DF3 /* GameViewController.m in Sources */,
 				44893D5B1A0F933800BD2DF3 /* AppDelegate.m in Sources */,
 				44893D5E1A0F933800BD2DF3 /* GameScene.m in Sources */,
+				44893D9C1A19063300BD2DF3 /* ADGSpikyBalls.m in Sources */,
 				44893D8D1A16B73500BD2DF3 /* ADGConstants.m in Sources */,
 				44893D871A0F98BE00BD2DF3 /* ADGFan.m in Sources */,
 				44893D581A0F933800BD2DF3 /* main.m in Sources */,

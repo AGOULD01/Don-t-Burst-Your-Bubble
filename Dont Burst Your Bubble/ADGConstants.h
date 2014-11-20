@@ -12,5 +12,7 @@
 
 extern const uint32_t kADGBubbleCategory;
 extern const uint32_t kADGFanCategory;
+extern const uint32_t kADGSpikyBallCategory;
+extern const uint32_t kADGMoleyCategory;
 
 @end

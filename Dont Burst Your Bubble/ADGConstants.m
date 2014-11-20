@@ -12,7 +12,7 @@
 
 const uint32_t kADGBubbleCategory = 0x1 << 0;
 const uint32_t kADGFanCategory = 0x1 << 1;
-
-
+const uint32_t kADGSpikyBallCategory = 0x1 << 2;
+const uint32_t kADGMoleyCategory = 0x1 << 3;
 
 @end

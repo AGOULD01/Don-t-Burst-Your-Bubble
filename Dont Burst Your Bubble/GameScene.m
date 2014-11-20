@@ -10,12 +10,15 @@
 #import "ADGFan.h"
 #import "ADGBubble.h"
 #import "ADGConstants.h"
+//#import "ADGSpikyBalls.h"
+#import "ADGMoley.h"
 
 @interface GameScene () 
 
 @property (nonatomic) ADGFan *leftFan;
 @property (nonatomic) ADGFan *rightFan;
 @property (nonatomic) ADGBubble *bubble;
+@property (nonatomic) ADGMoley *moley;
 @property (nonatomic) DirectionForce directionForce;
 @property (nonatomic) SKNode *mainLayer;
 @property (nonatomic) SKEmitterNode *bubbleBurstEmitter;
@@ -34,6 +37,7 @@
         
         //Setup physics
         self.physicsWorld.contactDelegate = self;
+        self.physicsWorld.gravity = CGVectorMake(0, -1);
         
         //Init mainlayer
         _mainLayer = [SKNode node];
@@ -62,10 +66,13 @@
         _bubble.bubbleBurst = NO;
         _gameOver = NO;
         
-        //Test Spiky Ball
-        SKSpriteNode *testBall = [SKSpriteNode spriteNodeWithImageNamed:@"SpikyBall"];
-        testBall.position = CGPointMake(self.size.width * 0.5, self.size.height * 0.75);
-        [_mainLayer addChild:testBall];
+        //Set up Moley
+        _moley = [[ADGMoley alloc] init];
+        _moley.position = CGPointMake(self.size.width * 0.5, self.size.height * 0.9);
+        [_mainLayer addChild:_moley];
+        
+        SKAction *prepare = [SKAction sequence:@[[SKAction waitForDuration:2 withRange:1], [SKAction performSelector:@selector(prepare) onTarget:self]]];
+        [self runAction:[SKAction repeatActionForever:prepare]];
     }
     return self;
     
@@ -93,6 +100,7 @@
             _leftFan.timePerFrame = 0.05;
             _leftFan.fanBirthRate = 40;
         }
+
     }
     else
     {
@@ -112,12 +120,15 @@
     _leftFan.timePerFrame = 0.2;
     _rightFan.fanBirthRate = 20;
     _leftFan.fanBirthRate = 20;
+
 }
 
 -(void)update:(CFTimeInterval)currentTime {
     /* Called before each frame is rendered */
     //Applies force to bubble from ADGBubble and pass direction.
     [_bubble applyForce:self.directionForce];
+    SKAction *moveMoley = [SKAction moveToX:_bubble.position.x duration:0.5];
+    [_moley runAction:moveMoley];
 }
 
 #pragma mark - Contact Delegate
@@ -150,6 +161,10 @@
     [self.bubbleBurstEmitter runAction:applyParticleEffect];
 }
 
+-(void)prepare
+{
+    [_moley prepareBall:_bubble];
+}
 
 
 
