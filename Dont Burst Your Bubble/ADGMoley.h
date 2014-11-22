@@ -12,7 +12,9 @@
 @interface ADGMoley : SKSpriteNode
 
 -(void)prepareBall:(ADGBubble *)bubble;
-
+-(void)moveMoley:(ADGBubble *)bubble;
+-(void)moleyWins:(SKAction *)winAnimation;
+-(void)reset;
 
 
 

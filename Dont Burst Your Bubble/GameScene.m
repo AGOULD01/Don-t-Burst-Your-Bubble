@@ -13,6 +13,12 @@
 //#import "ADGSpikyBalls.h"
 #import "ADGMoley.h"
 
+typedef enum : NSUInteger {
+    GameReady,
+    GameRunning,
+    GameOver,
+} GameState;
+
 @interface GameScene () 
 
 @property (nonatomic) ADGFan *leftFan;
@@ -22,7 +28,8 @@
 @property (nonatomic) DirectionForce directionForce;
 @property (nonatomic) SKNode *mainLayer;
 @property (nonatomic) SKEmitterNode *bubbleBurstEmitter;
-@property (nonatomic) BOOL gameOver;
+@property (nonatomic) GameState gameState;
+@property (nonatomic) SKAction *winAnimation;
 
 @end
 
@@ -64,7 +71,7 @@
         //Set initial values
         _directionForce = ApplyNone;
         _bubble.bubbleBurst = NO;
-        _gameOver = NO;
+        _gameState = GameReady;
         
         //Set up Moley
         _moley = [[ADGMoley alloc] init];
@@ -73,6 +80,11 @@
         
         SKAction *prepare = [SKAction sequence:@[[SKAction waitForDuration:2 withRange:1], [SKAction performSelector:@selector(prepare) onTarget:self]]];
         [self runAction:[SKAction repeatActionForever:prepare]];
+        
+        //Setup winning animation and cache in SKAction winAnimation
+        SKAction *winFrames = [SKAction animateWithTextures:@[[SKTexture textureWithImageNamed:@"MoleyResting"], [SKTexture textureWithImageNamed:@"MoleyHigh"]] timePerFrame:0.5];
+        SKAction *moveToCentre = [SKAction moveToX:self.size.width * 0.5 duration:1];
+        self.winAnimation = [SKAction repeatActionForever:[SKAction group:@[winFrames, moveToCentre]]];
     }
     return self;
     
@@ -81,7 +93,12 @@
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     /* Called when a touch begins */
     
-    if (!_gameOver)
+    if (self.gameState == GameReady)
+    {
+        self.gameState = GameRunning;
+    }
+    
+    if (self.gameState == GameRunning)
     {
         //Respond to the first touch
         UITouch *touch = [touches allObjects][0];
@@ -100,51 +117,70 @@
             _leftFan.timePerFrame = 0.05;
             _leftFan.fanBirthRate = 40;
         }
-
     }
     else
     {
         //Temporary until the menu is setup. This is for testing purposes.
-        _bubble = [[ADGBubble alloc] init];
-        _bubble.position = CGPointMake(self.size.width * 0.5, self.size.height * 0.5);
-        [_mainLayer addChild:_bubble];
-        _gameOver = NO;
+        if (_moley.position.x == self.size.width * 0.5)
+        {
+            _bubble = [[ADGBubble alloc] init];
+            _bubble.position = CGPointMake(self.size.width * 0.5, self.size.height * 0.5);
+            [_mainLayer addChild:_bubble];
+            [_moley reset];
+            self.gameState = GameReady;
+        }
     }
 }
 
 -(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
     //Touch ended. No force on the bubble. Decrease fans to normal speed.
-    self.directionForce = ApplyNone;
-    _rightFan.timePerFrame = 0.2;
-    _leftFan.timePerFrame = 0.2;
-    _rightFan.fanBirthRate = 20;
-    _leftFan.fanBirthRate = 20;
+    if (self.gameState == GameRunning)
+    {
+        self.directionForce = ApplyNone;
+        _rightFan.timePerFrame = 0.2;
+        _leftFan.timePerFrame = 0.2;
+        _rightFan.fanBirthRate = 20;
+        _leftFan.fanBirthRate = 20;
+    }
 
 }
 
 -(void)update:(CFTimeInterval)currentTime {
     /* Called before each frame is rendered */
-    //Applies force to bubble from ADGBubble and pass direction.
-    [_bubble applyForce:self.directionForce];
-    SKAction *moveMoley = [SKAction moveToX:_bubble.position.x duration:0.5];
-    [_moley runAction:moveMoley];
+    if (self.gameState == GameRunning)
+    {
+        //Applies force to bubble from ADGBubble and pass direction.
+        [_bubble applyForce:self.directionForce];
+        //Moves Moley from ADGMoley so that he runs marginally behind the bubble
+        [_moley moveMoley:self.bubble];
+    }
 }
 
 #pragma mark - Contact Delegate
 
 -(void)didBeginContact:(SKPhysicsContact *)contact
 {
-    [self bubbleExplosion:@"BurstBubble" forLocation:self.bubble.position];
-    _gameOver = YES;
-    
-    if (contact.bodyA.categoryBitMask == kADGBubbleCategory)
+    if (self.gameState == GameRunning)
     {
-        [self.bubble bubbleBurst:contact.bodyB];
-    }
-    else if (contact.bodyB.categoryBitMask == kADGBubbleCategory)
-    {
-        [self.bubble bubbleBurst:contact.bodyA];
+        self.directionForce = ApplyNone;
+        _rightFan.timePerFrame = 0.2;
+        _leftFan.timePerFrame = 0.2;
+        _rightFan.fanBirthRate = 20;
+        _leftFan.fanBirthRate = 20;
+        [self bubbleExplosion:@"BurstBubble" forLocation:self.bubble.position];
+        self.gameState = GameOver;
+        
+        if (contact.bodyA.categoryBitMask == kADGBubbleCategory)
+        {
+            [self.bubble bubbleBurst:contact.bodyB];
+        }
+        else if (contact.bodyB.categoryBitMask == kADGBubbleCategory)
+        {
+            [self.bubble bubbleBurst:contact.bodyA];
+        }
+        
+        [_moley moleyWins:self.winAnimation];
     }
 }
 
@@ -163,7 +199,10 @@
 
 -(void)prepare
 {
-    [_moley prepareBall:_bubble];
+    if (self.gameState == GameRunning)
+    {
+        [_moley prepareBall:_bubble];
+    }
 }
 
 

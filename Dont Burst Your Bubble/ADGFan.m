@@ -33,10 +33,10 @@
         //Setup animations and store in an array
         SKTextureAtlas *fanAnimations = [SKTextureAtlas atlasNamed:@"Graphics"];
         
-        _fanAnimations = [NSArray arrayWithObjects:[fanAnimations textureNamed:@"Fan1"],
+        _fanAnimations = @[[fanAnimations textureNamed:@"Fan1"],
                           [fanAnimations textureNamed:@"Fan2"],
                           [fanAnimations textureNamed:@"Fan3"],
-                          [fanAnimations textureNamed:@"Fan4"], nil];
+                          [fanAnimations textureNamed:@"Fan4"]];
         
         //Setup particle effects
         NSString *path = [[NSBundle mainBundle] pathForResource:@"FanParticles" ofType:@"sks"];
