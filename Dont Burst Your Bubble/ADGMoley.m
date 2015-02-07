@@ -13,7 +13,6 @@
 @interface ADGMoley ()
 
 @property (nonatomic) NSMutableArray *spikyBallArray;
-@property (nonatomic) SKAction *moveMoley;
 @property (nonatomic) SKAction *throwBall;
 
 @end
@@ -32,7 +31,7 @@
         self.physicsBody.categoryBitMask = kADGMoleyCategory;
         self.physicsBody.collisionBitMask = kADGBubbleCategory;
         
-        //Initiallise array to hold spiky balls and for now add 3 balls for testing
+        //Initiallise array to hold spiky balls and add 10 balls
         self.spikyBallArray = [NSMutableArray array];
         for (int i = 0; i <= 10; i++)
         {
@@ -42,9 +41,10 @@
         
         //Set repeatActionForever on Moley with range so throws ball randomly
         _throwBall = [SKAction repeatActionForever:[SKAction sequence:@[[SKAction waitForDuration:0.5 withRange:1], [SKAction performSelector:@selector(throw) onTarget:self]]]];
+        
+        //Call reset to set initial conditions
          [self reset];
     }
-    
     return self;
 }
 
@@ -106,7 +106,7 @@
                 ADGSpikyBalls *spikyBall = (ADGSpikyBalls *)self.spikyBallArray[0];
                 [self.spikyBallArray removeObjectAtIndex:0];
                 spikyBall.position = [self convertPoint:node.position toNode:self.parent];
-                [self.parent addChild:spikyBall];
+                [self.parent addChild:spikyBall]; //At this stage not sure if this is creating a strong reference cycle
                 [node removeFromParent];
             }
             else
@@ -114,7 +114,7 @@
                 //This code should never be called but is a back up to prevent crash if spiky ball array runs out of objects.
                 ADGSpikyBalls *spikyBallBackUp = [[ADGSpikyBalls alloc] init];
                 spikyBallBackUp.position = [self convertPoint:node.position toNode:self.parent];
-                [self.parent addChild:spikyBallBackUp];
+                [self.parent addChild:spikyBallBackUp];//At this stage not sure if this is creating a strong reference cycle
                 [node removeFromParent];
             }
         }];
@@ -123,8 +123,11 @@
 
 -(void)moveMoley:(ADGBubble *)bubble
 {
-    _moveMoley = [SKAction moveToX:bubble.position.x duration:0.5];
-    [self runAction:_moveMoley];
+//    Decided to set position based on bubbles velocity to avoid running 60 actions a second (DELETE FROM FINAL VERSION)
+//    _moveMoley = [SKAction moveToX:bubble.position.x duration:0.5];
+//    [self runAction:_moveMoley];
+        
+        self.position = CGPointMake(bubble.position.x - (bubble.physicsBody.velocity.dx * 0.1), self.position.y);
 }
 
 -(void)moleyWins:(SKAction *)winAnimation
@@ -140,6 +143,7 @@
     self.texture = [SKTexture textureWithImageNamed:@"MoleyResting"];
     [self runAction:self.throwBall];
 }
+
 
 
 @end

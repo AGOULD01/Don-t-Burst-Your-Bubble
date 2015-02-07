@@ -21,6 +21,7 @@
         self.physicsBody.angularVelocity = 20.0;
         self.physicsBody.categoryBitMask = kADGSpikyBallCategory;
         self.physicsBody.collisionBitMask = 0;
+        self.physicsBody.contactTestBitMask = kADGMoleyBabyCategory;
         self.name = @"SpikyBallReleased";
     }
     

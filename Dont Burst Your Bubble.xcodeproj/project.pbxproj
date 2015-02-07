@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4438C9C91A2252B0003577EC /* ADGScrollingNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 4438C9C81A2252B0003577EC /* ADGScrollingNode.m */; };
+		4438C9CC1A2252D0003577EC /* ADGScrollingBackground.m in Sources */ = {isa = PBXBuildFile; fileRef = 4438C9CB1A2252D0003577EC /* ADGScrollingBackground.m */; };
 		44893D581A0F933800BD2DF3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 44893D571A0F933800BD2DF3 /* main.m */; };
 		44893D5B1A0F933800BD2DF3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 44893D5A1A0F933800BD2DF3 /* AppDelegate.m */; };
 		44893D5E1A0F933800BD2DF3 /* GameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 44893D5D1A0F933800BD2DF3 /* GameScene.m */; };
@@ -25,6 +27,8 @@
 		44893D991A16F0D100BD2DF3 /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = 44893D961A16EAA600BD2DF3 /* spark.png */; };
 		44893D9C1A19063300BD2DF3 /* ADGSpikyBalls.m in Sources */ = {isa = PBXBuildFile; fileRef = 44893D9B1A19063300BD2DF3 /* ADGSpikyBalls.m */; };
 		44893D9F1A1BCFB800BD2DF3 /* ADGMoley.m in Sources */ = {isa = PBXBuildFile; fileRef = 44893D9E1A1BCFB800BD2DF3 /* ADGMoley.m */; };
+		44D37F5F1A6EEDD60045FB34 /* ADGMoleyBabies.m in Sources */ = {isa = PBXBuildFile; fileRef = 44D37F5E1A6EEDD60045FB34 /* ADGMoleyBabies.m */; };
+		44D37F611A7EB1720045FB34 /* BabyMoleysHit.sks in Resources */ = {isa = PBXBuildFile; fileRef = 44D37F601A7EB1720045FB34 /* BabyMoleysHit.sks */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +42,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4438C9C71A2252B0003577EC /* ADGScrollingNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADGScrollingNode.h; sourceTree = "<group>"; };
+		4438C9C81A2252B0003577EC /* ADGScrollingNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADGScrollingNode.m; sourceTree = "<group>"; };
+		4438C9CA1A2252D0003577EC /* ADGScrollingBackground.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADGScrollingBackground.h; sourceTree = "<group>"; };
+		4438C9CB1A2252D0003577EC /* ADGScrollingBackground.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADGScrollingBackground.m; sourceTree = "<group>"; };
 		44893D521A0F933800BD2DF3 /* Dont Burst Your Bubble.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Dont Burst Your Bubble.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		44893D561A0F933800BD2DF3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		44893D571A0F933800BD2DF3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -69,6 +77,9 @@
 		44893D9B1A19063300BD2DF3 /* ADGSpikyBalls.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADGSpikyBalls.m; sourceTree = "<group>"; };
 		44893D9D1A1BCFB800BD2DF3 /* ADGMoley.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADGMoley.h; sourceTree = "<group>"; };
 		44893D9E1A1BCFB800BD2DF3 /* ADGMoley.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADGMoley.m; sourceTree = "<group>"; };
+		44D37F5D1A6EEDD60045FB34 /* ADGMoleyBabies.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADGMoleyBabies.h; sourceTree = "<group>"; };
+		44D37F5E1A6EEDD60045FB34 /* ADGMoleyBabies.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADGMoleyBabies.m; sourceTree = "<group>"; };
+		44D37F601A7EB1720045FB34 /* BabyMoleysHit.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = BabyMoleysHit.sks; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +131,10 @@
 				44893D8C1A16B73500BD2DF3 /* ADGConstants.m */,
 				44893D5C1A0F933800BD2DF3 /* GameScene.h */,
 				44893D5D1A0F933800BD2DF3 /* GameScene.m */,
+				4438C9C71A2252B0003577EC /* ADGScrollingNode.h */,
+				4438C9C81A2252B0003577EC /* ADGScrollingNode.m */,
+				4438C9CA1A2252D0003577EC /* ADGScrollingBackground.h */,
+				4438C9CB1A2252D0003577EC /* ADGScrollingBackground.m */,
 				44893D851A0F98BE00BD2DF3 /* ADGFan.h */,
 				44893D861A0F98BE00BD2DF3 /* ADGFan.m */,
 				44893D881A101DA600BD2DF3 /* ADGBubble.h */,
@@ -128,6 +143,8 @@
 				44893D9B1A19063300BD2DF3 /* ADGSpikyBalls.m */,
 				44893D9D1A1BCFB800BD2DF3 /* ADGMoley.h */,
 				44893D9E1A1BCFB800BD2DF3 /* ADGMoley.m */,
+				44D37F5D1A6EEDD60045FB34 /* ADGMoleyBabies.h */,
+				44D37F5E1A6EEDD60045FB34 /* ADGMoleyBabies.m */,
 				44893D5F1A0F933800BD2DF3 /* GameScene.sks */,
 				44893D641A0F933800BD2DF3 /* Main.storyboard */,
 				44893D671A0F933800BD2DF3 /* Images.xcassets */,
@@ -167,6 +184,7 @@
 			isa = PBXGroup;
 			children = (
 				44893D951A16EAA600BD2DF3 /* FanParticles.sks */,
+				44D37F601A7EB1720045FB34 /* BabyMoleysHit.sks */,
 				44893D961A16EAA600BD2DF3 /* spark.png */,
 				44893D931A16E87600BD2DF3 /* BurstBubble.sks */,
 				44893D901A16C05200BD2DF3 /* spark.png */,
@@ -261,6 +279,7 @@
 				44893D971A16EAA600BD2DF3 /* FanParticles.sks in Resources */,
 				44893D681A0F933800BD2DF3 /* Images.xcassets in Resources */,
 				44893D601A0F933800BD2DF3 /* GameScene.sks in Resources */,
+				44D37F611A7EB1720045FB34 /* BabyMoleysHit.sks in Resources */,
 				44893D661A0F933800BD2DF3 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -280,9 +299,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				44893D8A1A101DA600BD2DF3 /* ADGBubble.m in Sources */,
+				4438C9CC1A2252D0003577EC /* ADGScrollingBackground.m in Sources */,
 				44893D9F1A1BCFB800BD2DF3 /* ADGMoley.m in Sources */,
+				44D37F5F1A6EEDD60045FB34 /* ADGMoleyBabies.m in Sources */,
 				44893D631A0F933800BD2DF3 /* GameViewController.m in Sources */,
 				44893D5B1A0F933800BD2DF3 /* AppDelegate.m in Sources */,
+				4438C9C91A2252B0003577EC /* ADGScrollingNode.m in Sources */,
 				44893D5E1A0F933800BD2DF3 /* GameScene.m in Sources */,
 				44893D9C1A19063300BD2DF3 /* ADGSpikyBalls.m in Sources */,
 				44893D8D1A16B73500BD2DF3 /* ADGConstants.m in Sources */,
@@ -363,7 +385,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -398,7 +420,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
